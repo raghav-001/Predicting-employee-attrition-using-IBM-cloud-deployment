@@ -1,0 +1,97 @@
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Employee Attrition Predictor</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+ <body background="{{ url_for('static', filename='bg.jpg') }}">
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Employee Attrition Predictor</span></h2>
+            <div class='description'>
+    			<br><br><p>A trained model that gets you the results on click of a button!</p>
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+    	
+    		<form action="{{ url_for('y_predict') }}" method="POST">
+    		<table align=center>
+    		<tr>
+    		<td><h3>Enter your satisfaction level</h3></td> 
+    		<td><input class="form-input" type="number" name="satisfaction" step="0.01" required="required"></td>
+    		</tr>
+    		<tr>
+			<td><h3>Number of projects completed </h3></td>
+			<td><input class="form-input" type="number" name="projects"></td>
+			</tr>
+			<tr>
+			<td><h3>Average monthly work hours </h3></td>
+			<td><input class="form-input" type="number" name="workhours"></td>
+			</tr>
+			<tr>
+			<td><h3>Years spent in company </h3></td>
+			<td><input class="form-input" type="number" name="years"></td>
+			</tr>
+			<tr>
+			<td><h3>Workplace accident</h3></td>
+    		<td>
+			<select id="accident" name="accident">
+			<option value="">Select option</option>
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+			</select>
+    		</td>
+    		</tr>
+    		<tr>
+			<td><h3>Promotion in last 5 years</h3></td>
+			<td>
+			<select id="promotion" name="promotion">
+			<option value="">Select option</option>
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+			</select>
+			</td>
+			</tr>
+			<tr>
+			<td><h3>Department</h3></td>
+			<td>
+			<select id="dept" name="dept">
+			<option value="">Select department</option>
+			<option value="sales">Sales</option>
+			<option value="accounting">Accounting</option>
+			<option value="hr">HR</option>
+			<option value="technical">Technical</option>
+			<option value="management">Management</option>
+			<option value="product_mng">Product manager</option>
+			<option value="marketing">Marketing</option>
+			<option value="RandD">Random dept</option>
+			</select>
+			</td>
+			</tr>
+			<tr>
+			<td><h3>Salary </h3></td>
+			<td>
+			<select id="salary" name="salary">
+			<option value="">Select option</option>
+			<option value="low">Low</option>
+			<option value="medium">Medium</option>
+			<option value="high">High</option>
+			</select>
+			</td>
+			</tr>
+            <tr>
+        		<td colspan="2" ><input type="submit" class="my-cta-button" value="Predict"></td>
+        	</tr>
+        		</table>
+        	</form>
+        	
+    
+    </body>
+</html>
